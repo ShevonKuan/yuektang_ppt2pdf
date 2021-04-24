@@ -30,7 +30,7 @@
                 'status': 'ok'
             }),
             onload: function () {
-                    $('.fuckyuketang').html('开始打印...');
+                    alert('开始打印...');
                     GM_xmlhttpRequest({
                         method: "POST",
                         url: "http://localhost:63321/print",
