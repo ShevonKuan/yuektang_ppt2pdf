@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         雨课堂课件导出为pdf
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description 雨课堂课件ppt导出为pdf,需要后端支持,详见https://github.com/ShevonKuan/yuektang_ppt2pdf
 // @author       shevon
 // @match        https://changjiang.yuketang.cn/web/print
