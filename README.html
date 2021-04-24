@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x96E8;&#x8BFE;&#x5802;&#x8BFE;&#x4EF6;&#x4E0B;&#x8F7D;&#x5668;</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body">
+        <h1 id="雨课堂课件下载器">雨课堂课件下载器</h1>
+<h2 id="shevon-kuan">Shevon Kuan</h2>
+<ul>
+<li>目前仅支持长江与课堂</li>
+</ul>
+<h2 id="心路历程">心路历程</h2>
+<p>超级讨厌雨课堂的课件导出功能.说是保护老师的版权,实则在每一张课件上加上了自己的logo,这叫保护老师的版权?是你想吞占老师的成果,打上自己的名字吧.老师的课件为啥不写老师的名字,偏偏写上雨课堂?</p>
+<p>为此,作者开发了这个简单的软件.</p>
+<p>雨课堂的课件打印页面是动态生成的,而且会与后端联系获取sessionid所对应的处于打开状态的课件id.我首先考虑的是,逐行阅读该逻辑所对应的js文件(几万行),使用python重现该逻辑,以实现对动态页面的爬取.缺点:</p>
+<ul>
+<li>需要访问系统敏感目录获取浏览器对应的cookies文件以获取<code>sessionid</code>和<code>crftoken</code>.</li>
+<li>模拟网页渲染过程需要的逻辑复杂,花费了大量的精力去实现后发现爬取速度非常慢,这远比直接看网页慢,不实际.</li>
+</ul>
+<p>然后我考虑使用浏览器模拟操作的方法使用<code>selenium</code>库,缺点:</p>
+<ul>
+<li>过程十分不友好,需要用户重复登录,并且会产生较多的无必要的页面刷新和跳转以重新获取domain等cookie键值对.</li>
+<li>每一次爬取后需要重新调用beautifulsoup进行分析,即每导出一个pdf就需要重新运行一次程序(或循环体),既不美观又不高效</li>
+</ul>
+<p>最后,我使用了油猴脚本结合本地<code>flask</code>服务器的方式.巧妙结合了JavaScript对页面dom元素的操作能力和python极其丰富的功能.提出<strong>前端侵入性脚本辅助python进行爬虫</strong>的全新爬虫形式.</p>
+<h2 id="使用说明">使用说明</h2>
+<ol>
+<li>下载并解压releases中最新的软件包,将<code>YuKeTang_Print2PDF.js</code>添加到油猴控制台或者使用greasyfork链接进行添加
+<a href="https://greasyfork.org/zh-TW/scripts/425490-%E9%9B%A8%E8%AF%BE%E5%A0%82%E8%AF%BE%E4%BB%B6%E5%AF%BC%E5%87%BA%E4%B8%BApdf">https://greasyfork.org/zh-TW/scripts/425490-雨课堂课件导出为pdf</a></li>
+<li>双击打开<code>课件打印服务器.exe</code>,第一次使用请放行防火墙</li>
+<li>打开对应的课件页面点解打印后将会跳转到<code>https://changjiang.yuketang.cn/web/print</code>该链接,在该页面打印的地方将会出现<code>脚本打印</code>的按钮,点击即可运行,状态可以在<code>课件打印服务器.exe</code>的窗口中看到.</li>
+</ol>
+
+    </body>
+    </html>
