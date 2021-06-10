@@ -11,11 +11,11 @@
 
 (function () {
     'use strict';
-    var link = new Array();
     setTimeout(function () { console.log('开始执行'); }, 3000);
     $('.controls-btns').append('<p class="print fuckyuketang" title="打印">脚本打印</p>');
     $('.fuckyuketang').on('click', function () {
         $('.fuckyuketang').html('开始获取图片资源信息...');
+        var link = new Array();
         $.each($('img.pptimg'), function () {
             link.push($(this).attr('src'));
         });
