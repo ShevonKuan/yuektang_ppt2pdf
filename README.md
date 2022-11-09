@@ -1,7 +1,10 @@
 # 雨课堂课件下载器
 Shevon Kuan
+
+- 目前支持大部分雨课堂
+
 ----
-- 目前仅支持长江与课堂
+
 ## 心路历程
 
 超级讨厌雨课堂的课件导出功能.说是保护老师的版权,实则在每一张课件上加上了自己的logo,这叫保护老师的版权?是你想吞占老师的成果,打上自己的名字吧.老师的课件为啥不写老师的名字,偏偏写上雨课堂?
@@ -18,9 +21,14 @@ Shevon Kuan
 
 最后,我使用了油猴脚本结合本地`flask`服务器的方式.巧妙结合了JavaScript对页面dom元素的操作能力和python极其丰富的功能.提出**前端侵入性脚本辅助python进行爬虫**的全新爬虫形式.
 
-## 使用说明
+## 使用说明（需要启动后端，该方法已弃用）
 
 1. 下载并解压releases中最新的软件包,将`YuKeTang_Print2PDF.js`添加到油猴控制台或者使用greasyfork链接进行添加
 <https://greasyfork.org/zh-TW/scripts/425490-%E9%9B%A8%E8%AF%BE%E5%A0%82%E8%AF%BE%E4%BB%B6%E5%AF%BC%E5%87%BA%E4%B8%BApdf>
 2. 双击打开`课件打印服务器.exe`,第一次使用请放行防火墙
 3. 打开对应的课件页面点解打印后将会跳转到`https://changjiang.yuketang.cn/web/print`该链接,在该页面打印的地方将会出现`脚本打印`的按钮,点击即可运行,状态可以在`课件打印服务器.exe`的窗口中看到.
+
+## 使用说明（建议使用）
+
+使用greasyfork链接进行添加
+<https://greasyfork.org/zh-TW/scripts/454520-%E9%9B%A8%E8%AF%BE%E5%A0%82%E8%AF%BE%E4%BB%B6%E5%AF%BC%E5%87%BA%E4%B8%BApdf-%E6%97%A0%E5%90%8E%E7%AB%AF%E7%89%88%E6%9C%AC>,该版本使用`jsPDF`在线生成pdf,不需要启动后端.
