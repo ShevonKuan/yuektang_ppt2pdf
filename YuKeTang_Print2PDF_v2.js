@@ -56,6 +56,7 @@
         });
         for (var i = 0; i < imgList.length; i++) {
             var link = imgList[i];
+            $(".fuckyuketang2").html("获取第" + i + "张图片");
             await loadImage(link).then((data) => {
                 imgData.push(data);
             });
