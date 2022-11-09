@@ -39,6 +39,7 @@ def outpdf(title, urls):
     file.save(title+'.pdf', 'PDF', resolution=100.0,
               save_all=True, append_images=ImageList)
     print('完成pdf导出')
+    shutil.rmtree("tmp")  # 执行完成删除缓存
 
 
 @app.route('/print', methods=['post'])
@@ -46,7 +47,7 @@ def index():
     data = json.loads(request.get_data())
     try:
         outpdf(data['title'], data['link'])
-        shutil.rmtree("tmp")  # 执行完成删除缓存
+        
         return json.dumps({'status': 'ok'})
     except:
         shutil.rmtree("tmp")
