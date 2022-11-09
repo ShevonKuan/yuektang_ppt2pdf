@@ -30,5 +30,5 @@ Shevon Kuan
 
 ## 使用说明（建议使用）
 
-使用greasyfork链接进行添加
-<https://greasyfork.org/zh-TW/scripts/454520-%E9%9B%A8%E8%AF%BE%E5%A0%82%E8%AF%BE%E4%BB%B6%E5%AF%BC%E5%87%BA%E4%B8%BApdf-%E6%97%A0%E5%90%8E%E7%AB%AF%E7%89%88%E6%9C%AC>,该版本使用`jsPDF`在线生成pdf,不需要启动后端.
+1. 使用greasyfork链接进行添加<https://greasyfork.org/zh-TW/scripts/454520-%E9%9B%A8%E8%AF%BE%E5%A0%82%E8%AF%BE%E4%BB%B6%E5%AF%BC%E5%87%BA%E4%B8%BApdf-%E6%97%A0%E5%90%8E%E7%AB%AF%E7%89%88%E6%9C%AC>,该版本使用`jsPDF`在线生成pdf,不需要启动后端.
+2. 打开对应的课件页面点解打印后将会跳转到`https://changjiang.yuketang.cn/web/print`该链接,在该页面打印的地方将会出现`脚本打印`的按钮,点击即可运行,状态可以在`课件打印服务器.exe`的窗口中看到.
